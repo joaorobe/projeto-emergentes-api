@@ -3,9 +3,12 @@
   "version": "1.0.0",
   "main": "index.ts",
 "scripts": {
-    "dev": "npx ts-node-dev --respawn index.ts",
-    "vercel-build": "prisma generate && prisma migrate deploy",
-    "preview": "prisma studio"
+  "dev": "npx ts-node-dev --respawn index.ts",
+  "build": "prisma generate && prisma migrate deploy",
+  "vercel-build": "prisma generate && prisma migrate deploy"
+},
+  "prisma": {
+    "schema": "prisma/schema.prisma"
   },
   "keywords": [],
   "author": "",
