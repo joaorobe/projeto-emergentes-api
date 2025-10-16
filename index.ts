@@ -28,11 +28,9 @@ app.use("/admins", routesAdmins)
 app.use("/estoques", routesEstoques)
 
 app.get('/', (req, res) => {
-  res.send('API: Revenda de Sapatos')
+  res.send('API: Sapataria Avenida')
 })
 
 app.listen(port, () => {
   console.log(`Servidor rodando na porta: ${port}`)
 })
-
-export default app;
