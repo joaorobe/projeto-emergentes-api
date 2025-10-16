@@ -2,10 +2,10 @@
   "name": "revenda-avenida-api",
   "version": "1.0.0",
   "main": "index.ts",
-  "scripts": {
+"scripts": {
     "dev": "npx ts-node-dev --respawn index.ts",
-    "vercel-build": "npx prisma migrate deploy",
-    "preview": "prisma generate"
+    "vercel-build": "prisma generate && prisma migrate deploy",
+    "preview": "prisma studio"
   },
   "keywords": [],
   "author": "",
