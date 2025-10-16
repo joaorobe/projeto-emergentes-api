@@ -40,7 +40,6 @@ router.get("/", verificaToken, async (req, res) => {
   }
 });
 
-
 function validaSenha(senha: string) {
   const mensa: string[] = [];
   if (senha.length < 8) {
@@ -121,13 +120,8 @@ router.delete("/:id", verificaToken, async (req, res) => {
         where: { id },
       }),
     ]);
-      const propostas = await prisma.proposta.count({ where: { clienteId: id } });
-        if (propostas > 0) {
-          return res.status(400).json({ erro: "Não é possível excluir um cliente com reservas ativas." });
-        }
-        await prisma.cliente.delete({ where: { id } });
 
-    res.status(200).json({ message: "Cliente excluído com sucesso." });
+    res.status(200).json({ message: "Cliente e suas reservas foram excluídos com sucesso." });
   } catch (error) {
     console.error("Erro ao excluir cliente:", error);
     res.status(500).json({ erro: "Falha ao excluir o cliente." });
